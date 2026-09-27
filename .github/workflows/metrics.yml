@@ -1,0 +1,27 @@
+name: metrics
+
+# 每天自动生成一次 GitHub 统计卡片，提交到本仓库由 README 引用。
+# 用仓库自带的 GITHUB_TOKEN，不依赖任何第三方统计服务。
+
+on:
+  schedule:
+    - cron: "0 2 * * *"   # 每天 UTC 2:00（北京时间 10:00）
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: lowlighter/metrics@latest
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          user: samxie2752
+          filename: github-metrics.svg
+          committer_branch: main
+          base: header, activity, community
+          config_timezone: Asia/Shanghai

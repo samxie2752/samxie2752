@@ -16,6 +16,6 @@
 
 ---
 
-![stats](https://github-readme-stats.vercel.app/api?username=samxie2752&show_icons=true&hide_border=true&count_private=true)
+![metrics](./github-metrics.svg)
 
 <!-- 以上数据均为 GitHub 自动统计 -->
